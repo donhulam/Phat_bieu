@@ -221,13 +221,13 @@ const App: React.FC = () => {
   };
 
   const formFields = [
-    { name: 'role', label: 'Chức danh người phát biểu', type: 'textarea', placeholder: 'Nhập giá trị', rows: 2 },
+    { name: 'role', label: 'Chức danh người phát biểu', type: 'textarea', placeholder: 'Nhập giá trị', rows: 1 },
     { name: 'eventName', label: 'Tên Hội nghi, Hội thảo, Sự kiện...', type: 'textarea', placeholder: 'Nhập giá trị', rows: 2 },
     { name: 'organizer', label: 'Đơn vị tổ chức (chủ trì) sự kiện', type: 'text', placeholder: 'Nhập giá trị' },
-    { name: 'context', label: 'Căn cứ tổ chức sự kiện (Tình hình thực tế, đề xuất của ..., văn bản chỉ đạo...)', type: 'textarea', placeholder: 'Nhập giá trị' },
-    { name: 'message', label: 'Kết quả kỳ vọng sau sự kiện', type: 'textarea', placeholder: 'Nhập giá trị' },
-    { name: 'audience', label: 'Thành phần tham gia sự kiện', type: 'textarea', placeholder: 'Nhập giá trị' },
-    { name: 'keyPoints', label: 'Các kết quả, số liệu nổi bật liên quan', type: 'textarea', placeholder: 'Nhập giá trị' },
+    { name: 'context', label: 'Căn cứ tổ chức sự kiện (Tình hình thực tế, đề xuất của ..., văn bản chỉ đạo...)', type: 'textarea', placeholder: 'Nhập giá trị', rows: 4 },
+    { name: 'message', label: 'Kết quả kỳ vọng sau sự kiện', type: 'textarea', placeholder: 'Nhập giá trị', rows: 2 },
+    { name: 'audience', label: 'Thành phần tham gia sự kiện', type: 'textarea', placeholder: 'Nhập giá trị', rows: 2 },
+    { name: 'keyPoints', label: 'Các kết quả, số liệu nổi bật liên quan', type: 'textarea', placeholder: 'Nhập giá trị', rows: 4 },
     { name: 'style', label: 'Phong cách phát biểu', type: 'select', placeholder: 'Chọn giá trị', options: SPEECH_STYLES },
     { name: 'length', label: 'Độ dài (Số từ trong bài)', type: 'text', placeholder: 'Nhập giá trị' },
     { name: 'language', label: 'Ngôn ngữ', type: 'select', placeholder: 'Chọn ngôn ngữ', options: LANGUAGES },
@@ -248,7 +248,7 @@ const App: React.FC = () => {
           <aside className="lg:col-span-2 bg-white p-6 rounded-xl shadow-sm border border-gray-200">
             <h2 className="text-lg font-semibold mb-6">Nhập dữ liệu</h2>
             <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="space-y-5 max-h-[calc(100vh-35rem)] overflow-y-auto pr-2 custom-scrollbar">
+              <div className="space-y-4 max-h-[calc(100vh-28rem)] overflow-y-auto pr-2 custom-scrollbar">
                 {formFields.map(field => {
                    if (field.name === 'context') {
                     return (
@@ -260,6 +260,7 @@ const App: React.FC = () => {
                           onChange={handleChange}
                           placeholder={field.placeholder}
                           type={field.type as 'text' | 'textarea' | 'select'}
+                          rows={field.rows}
                         />
                          <div className="mt-2">
                            <label className="inline-flex items-center gap-2 text-sm text-brand-teal-600 font-medium cursor-pointer hover:text-brand-teal-800 transition-colors">
@@ -302,6 +303,7 @@ const App: React.FC = () => {
                           onChange={handleChange}
                           placeholder={field.placeholder}
                           type={field.type as 'text' | 'textarea' | 'select'}
+                          rows={field.rows}
                         />
                          <div className="mt-2">
                            <label className="inline-flex items-center gap-2 text-sm text-brand-teal-600 font-medium cursor-pointer hover:text-brand-teal-800 transition-colors">

@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 type InputControlProps = {
@@ -20,7 +19,7 @@ const InputControl: React.FC<InputControlProps> = ({
   placeholder,
   type = 'text',
   options,
-  rows = 3,
+  rows = 2,
 }) => {
   const renderInput = () => {
     switch (type) {
@@ -33,7 +32,7 @@ const InputControl: React.FC<InputControlProps> = ({
             onChange={onChange}
             placeholder={placeholder}
             rows={rows}
-            className="w-full bg-gray-100 border-none rounded-md p-3 focus:ring-2 focus:ring-brand-teal-500 transition-shadow duration-200 text-sm"
+            className="w-full bg-gray-100 border-none rounded-md p-2.5 focus:ring-2 focus:ring-brand-teal-500 transition-shadow duration-200 text-sm"
           />
         );
       case 'select':
@@ -43,7 +42,7 @@ const InputControl: React.FC<InputControlProps> = ({
             name={name}
             value={value}
             onChange={onChange}
-            className="w-full bg-gray-100 border-none rounded-md p-3 focus:ring-2 focus:ring-brand-teal-500 transition-shadow duration-200 text-sm appearance-none"
+            className="w-full bg-gray-100 border-none rounded-md p-2.5 focus:ring-2 focus:ring-brand-teal-500 transition-shadow duration-200 text-sm appearance-none"
           >
             <option value="" disabled>{placeholder}</option>
             {options?.map((option) => (
@@ -60,7 +59,7 @@ const InputControl: React.FC<InputControlProps> = ({
             value={value}
             onChange={onChange}
             placeholder={placeholder}
-            className="w-full bg-gray-100 border-none rounded-md p-3 focus:ring-2 focus:ring-brand-teal-500 transition-shadow duration-200 text-sm"
+            className="w-full bg-gray-100 border-none rounded-md p-2.5 focus:ring-2 focus:ring-brand-teal-500 transition-shadow duration-200 text-sm"
           />
         );
     }
